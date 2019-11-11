@@ -1,0 +1,27 @@
+version: '2'
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    volumes:
+      - './docker/db:/var/lib/mysql'
+    ports:
+      - '100:3306'
+  rest-api:
+    image: 'java:openjdk-8-jre-alpine'
+    ports:
+      - '8080:8080'
+    volumes:
+      - './exportet:/app'
+    command: java -jar /app/rest-api.war
+    depends_on:
+      - db
+  webpage:
+    image: tomcat
+    ports:
+      - '80:8080'
+    volumes:
+      - './exportet:/usr/local/tomcat/webapps'
+    depends_on:
+      - db
