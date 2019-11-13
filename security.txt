@@ -27,6 +27,7 @@ Damit ist es eine billige methode. da man damit entweder ohne die verlängerung 
 (!Funktioniert nur bei String keys)
 ------------------------------------------
 
+
 Was dazu führt dass :
 Lizensschlüssel besteht aus
 Name des besitzers
@@ -38,8 +39,10 @@ bestehen aus 50-70 zeichen die aber auch sonderzeichen beinhalten und sind maxim
 
 
 ZUSÄTZLICH:
-Sollte eine request mit einem Falschen key oder einer falschen lizens gemacht werden ist die bei lizensen der name und bei session keys die IP für 60 sekunden gesperrt damit sollte bruteforce unmöglich sein das gleiche gilt für passwörter nur dass hier das delay allgemein (auch bei richtigen anfragen) 10 sekunden beträgt da time cheking unmöglich gemacht werden soll
+Sollte eine request mit einem Falschen key oder einer falschen lizens gemacht werden ist die bei lizensen der name und bei session keys die IP für 60 sekunden gesperrt damit sollte bruteforce unmöglich sein das gleiche gilt für passwörter nur dass hier das delay allgemein (auch bei richtigen anfragen) 1 sekunden beträgt da time cheking unmöglich gemacht werden soll. Benutzer maximal 5
 
 Leider sind damit passwörter die größte schwachstelle
 
 XSS VERHINDERN!
+
+Login einmalcode*?
