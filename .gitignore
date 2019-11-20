@@ -12,3 +12,7 @@ rest-api/
 webpage/
 
 .idea/
+
+clients/
+
+docker/
