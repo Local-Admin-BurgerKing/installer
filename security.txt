@@ -46,3 +46,5 @@ Leider sind damit passwörter die größte schwachstelle
 XSS VERHINDERN!
 
 Login einmalcode*?
+
+Passwörter verschlüsseln mit sich selbst
