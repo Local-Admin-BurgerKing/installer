@@ -1,9 +1,10 @@
 version: '2'
 services:
   db:
-    image: mysql:5.7
+    image: 'mysql:5.7'
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_MAJOR=5.7
     volumes:
       - './docker/db:/var/lib/mysql'
     ports:
