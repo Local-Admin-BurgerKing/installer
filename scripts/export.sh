@@ -1,3 +1,5 @@
+cd ..
+
 mkdir exportet
 
 cd core

@@ -1,3 +1,4 @@
+cd ..
 cd core
 mvn install
 cd ../rest-api
