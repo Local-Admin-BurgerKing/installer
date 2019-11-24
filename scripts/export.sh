@@ -1,4 +1,3 @@
-cd ..
 
 mkdir exportet
 

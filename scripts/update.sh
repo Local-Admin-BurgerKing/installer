@@ -1,4 +1,3 @@
-cd ..
 cd media-framework
 git pull
 mvn clean install
