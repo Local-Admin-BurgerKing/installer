@@ -5,8 +5,10 @@ services:
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_MAJOR=5.7
+      - max_sp_recursion_depth=12
     volumes:
       - './docker/db:/var/lib/mysql'
+      - '/mysql.cnf:/etc/my.cnf'
     ports:
       - '100:3306'
   rest-api:
