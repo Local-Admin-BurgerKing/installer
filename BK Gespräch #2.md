@@ -1,8 +1,13 @@
 ## BK Gespräch
 
 - Todo
+  - automatische backups
   - Reports (PDF)
+    - Email Sender
   - Summenbildung
+  - Logging
+  - Mehrsprachensystem (vielleicht)
+  - Erweiterung vereinfachung der Schnittstelle
 - Table enchantment
   - Payroll sichtbar
 - Auslieferung
@@ -20,3 +25,4 @@
   - Funktionalität - Neue funktionen
   - Benutzerfreundlichkeit - nice to have funktionen
   - Aussehen - aussehen der oberfläches
+- Genauere und mehr permissions

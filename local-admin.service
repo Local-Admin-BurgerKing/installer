@@ -1,0 +1,14 @@
+[Unit]
+Description=Local Admin Server
+After=dockerd.service
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=bash /usr/bin/start-local-admin
+ExecStop=bash /usr/bin/stop-local-admin
+
+[Install]
+WantedBy=multi-user.target

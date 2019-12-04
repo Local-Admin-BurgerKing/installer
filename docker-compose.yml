@@ -28,3 +28,10 @@ services:
       - './exportet:/usr/local/tomcat/webapps'
     depends_on:
       - db
+  service-worker:
+    image: 'java:openjdk-8-jre-alpine'
+    volumes:
+      - './exportet:/app'
+    command: java -jar /app/sw.jar
+    depends_on:
+      - db

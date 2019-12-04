@@ -14,3 +14,7 @@ mvn package
 cp target/*.war ../exportet/webpage.war
 cd ..
 
+cd service-worker
+mvn package
+cp target/*-dependencies.jar ../exportet/ws.jar
+cd ..
