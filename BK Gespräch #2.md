@@ -2,6 +2,7 @@
 
 - Todo
   - Reports (PDF)
+  - Summenbildung
 - Table enchantment
   - Payroll sichtbar
 - Auslieferung
@@ -11,3 +12,6 @@
   - Ein mittarbeiter bei ihnen
   - Alle beschwerden oder verbesserungen an tobi
   - **Wirklich alles und genau testen**
+
+- Probleme mit 3. Software
+- (Tobi W) Lizensierung 9. Restaurants gratis key (weitere ungeklärt)
