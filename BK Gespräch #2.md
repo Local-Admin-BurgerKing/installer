@@ -12,6 +12,11 @@
   - Ein mittarbeiter bei ihnen
   - Alle beschwerden oder verbesserungen an tobi
   - **Wirklich alles und genau testen**
-
 - Probleme mit 3. Software
 - (Tobi W) Lizensierung 9. Restaurants gratis key (weitere ungeklärt)
+- Prioritätsliste
+  - Ausfallsicherheit/Stabilität - Test cases
+  - Sicherheit - ITSY
+  - Funktionalität - Neue funktionen
+  - Benutzerfreundlichkeit - nice to have funktionen
+  - Aussehen - aussehen der oberfläches
