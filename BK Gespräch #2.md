@@ -6,7 +6,7 @@
     - Email Sender
   - Summenbildung
   - Logging
-  - Mehrsprachensystem (vielleicht)
+  - Mehrsprachensystem (vielleicht) (Kalian)
   - Erweiterung vereinfachung der Schnittstelle
 - Table enchantment
   - Payroll sichtbar
@@ -16,13 +16,18 @@
 - Testing
   - Ein mittarbeiter bei ihnen
   - Alle beschwerden oder verbesserungen an tobi
-  - **Wirklich alles und genau testen**
+  - **Wirklich alles und genau testen** (Kalian)
 - Probleme mit 3. Software
 - (Tobi W) Lizensierung 9. Restaurants gratis key (weitere ungeklärt)
 - Prioritätsliste
-  - Ausfallsicherheit/Stabilität - Test cases
+  - Ausfallsicherheit/Stabilität - Test cases (Kalian)
   - Sicherheit - ITSY
   - Funktionalität - Neue funktionen
-  - Benutzerfreundlichkeit - nice to have funktionen
+  - Benutzerfreundlichkeit - nice to have funktionen 
+    - Cascade deleting (Kalian)
+    - In use (Kalian)
+    - Languages (Kalian)
   - Aussehen - aussehen der oberfläches
 - Genauere und mehr permissions
+- Errors Updaten (Kalian)
+- Dokumentation übersetzt und noch weiter Updaten, also auch die Methoden beschreibungen (Kalian)
