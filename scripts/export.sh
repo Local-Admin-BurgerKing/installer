@@ -12,6 +12,7 @@ cd ..
 cd webpage
 mvn package
 cp target/*.war ../exportet/webpage.war
+cp target/*.war ../exportet/ROOT.war
 cd ..
 
 cd service-worker

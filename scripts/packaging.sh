@@ -1,7 +1,7 @@
-# /bin/sh
-# ./scripts/export.sh
+#!/bin/bash
+./scripts/export.sh
 rm -r localadmin_1.0-1
-
+rm localadmin_1.0-1.deb
 mkdir localadmin_1.0-1
 mkdir -p localadmin_1.0-1/opt/local-admin/docker
 mkdir -p localadmin_1.0-1/opt/local-admin/exportet
@@ -9,6 +9,9 @@ mkdir -p localadmin_1.0-1/opt/local-admin/exportet
 cp docker-compose.yml localadmin_1.0-1/opt/local-admin/
 cp -r exportet/* localadmin_1.0-1/opt/local-admin/exportet/
 cp -r docker/* localadmin_1.0-1/opt/local-admin/docker/
+rm -r localadmin_1.0-1/opt/local-admin/docker/db/*
+cp -r base-db/* localadmin_1.0-1/opt/local-admin/docker/db
+
 
 mkdir localadmin_1.0-1/usr/bin -p
 cp run.sh localadmin_1.0-1/usr/bin/start-local-admin
