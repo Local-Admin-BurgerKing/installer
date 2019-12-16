@@ -32,6 +32,8 @@ services:
     image: 'java:openjdk-8-jre-alpine'
     volumes:
       - './exportet:/app'
+      - './docker/db-backup:/to'
+      - './docker/db:/from'
     command: java -jar /app/sw.jar
     depends_on:
       - db
