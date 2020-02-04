@@ -46,7 +46,7 @@
 
 ## What is it
 
-The function and usage area is decribed in over 100 Pages so we won't repeat it all
+The function and usage area is described in over 100 Pages so we won't repeat it all
 
 > This 100 page document is called `Lastenheft` and `Machbarkeitsstudie` (which are owned by every owner of the software)
 
