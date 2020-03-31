@@ -12,7 +12,7 @@ services:
     ports:
       - '100:3306'
   rest-api:
-    image: 'java:openjdk-8-jre-alpine'
+    image: 'openjdk:11'
     ports:
       - '8080:8080'
     volumes:
@@ -21,7 +21,7 @@ services:
     depends_on:
       - db
   webpage:
-    image: tomcat
+    image: 'tomcat:jdk11-openjdk'
     ports:
       - '80:8080'
     volumes:
@@ -29,7 +29,7 @@ services:
     depends_on:
       - db
   service-worker:
-    image: 'java:openjdk-8-jre-alpine'
+    image: 'openjdk:11'
     volumes:
       - './exportet:/app'
       - './docker/db-backup:/to'
