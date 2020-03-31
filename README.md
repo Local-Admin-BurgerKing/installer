@@ -96,7 +96,9 @@ each of this reports contains a pair list of daily-columns and their value (in c
 
 ### Diagram
 
-![image-20191219181418111](/home/nils/.config/Typora/typora-user-images/image-20191219181418111.png)
+> Some tables are documented using comments
+
+![image-20191219181418111](core/DB/ERD.png)
 
 ### Procedures
 
