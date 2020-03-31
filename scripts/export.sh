@@ -1,6 +1,14 @@
 rm exportet -r
 mkdir exportet
 
+cd media-framework
+mvn install
+cd ..
+
+cd autowire
+mvn install
+cd ..
+
 cd core
 mvn clean install
 cd ..
