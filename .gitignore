@@ -19,6 +19,6 @@ docker/
 
 android-app/
 
-localadmin_1.0-1/*
+localadmin_*-1/*
 
 base-db/
