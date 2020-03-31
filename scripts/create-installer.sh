@@ -16,16 +16,17 @@ if [ $# -eq 1 ]
 
 
         mkdir localadmin_$1-1/usr/bin -p
-        cp run.sh localadmin_$1-1/usr/bin/start-local-admin
-        cp stop.sh localadmin_$1-1/usr/bin/stop-local-admin
+        cp installer-data/run.sh localadmin_$1-1/usr/bin/start-local-admin
+        cp installer-data/stop.sh localadmin_$1-1/usr/bin/stop-local-admin
 
         mkdir localadmin_$1-1/etc/init.d/ -p
-        cp run.sh localadmin_$1-1/etc/init.d/localadmin
+        cp installer-data/run.sh localadmin_$1-1/etc/init.d/localadmin
 
         sed -i 's|/mysql.cnf|./docker/mysql.cnf|' localadmin_$1-1/opt/local-admin/docker-compose.yml
 
         mkdir -p localadmin_$1-1/DEBIAN
-        cp INSTALLER.meta localadmin_$1-1/DEBIAN/control
+        cp installer-data/INSTALLER.meta localadmin_$1-1/DEBIAN/control
+        cp installer-data/local-admin.service localadmin_$1-1/opt/systemd/system
         sed -i "s|{V}|$1|" localadmin_$1-1/DEBIAN/control
         dpkg-deb --build localadmin_$1-1
     else
