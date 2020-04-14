@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   db:
     image: 'mysql:8.0'
@@ -37,3 +37,10 @@ services:
     command: java -jar /app/sw.jar
     depends_on:
       - db
+  installer:
+    image: 'debian:buster'
+    volumes:
+      - './:/project'
+    environment:
+      - version=1.2
+    command: /project/scripts/docker-deb-installer.sh

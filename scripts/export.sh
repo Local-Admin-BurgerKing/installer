@@ -21,7 +21,6 @@ cd ..
 
 cd webpage
 mvn clean package
-cp target/*.war ../exportet/webpage.war
 cp target/*.war ../exportet/ROOT.war
 cd ..
 

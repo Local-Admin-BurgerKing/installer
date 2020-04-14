@@ -1,5 +1,5 @@
-#!/bin/bash
-if [ $# -eq 1 ]
+##!/bin/bash
+if (( $# == 2 )) && (( "$2" == "-e" || "$2" == "-c" || "$2" == "-d" ))
     then
         ./scripts/export.sh
         rm -r localadmin_$1-1
@@ -10,9 +10,17 @@ if [ $# -eq 1 ]
 
         cp docker-compose.yml localadmin_$1-1/opt/local-admin/
         cp -r exportet/* localadmin_$1-1/opt/local-admin/exportet/
-        cp -r docker/* localadmin_$1-1/opt/local-admin/docker/
-        rm -r localadmin_$1-1/opt/local-admin/docker/db/*
-        cp -r base-db/* localadmin_$1-1/opt/local-admin/docker/db
+	cp -r docker/* localadmin_$1-1/opt/local-admin/docker/
+	
+	if [ "$2" = "-e" ]
+		then
+			rm -r localadmin_$1-1/opt/local-admin/docker/db/*
+	fi
+	if [ "$2" = "-c" ]
+		then
+			rm -r localadmin_$1-1/opt/local-admin/docker/db/*
+			cp -r base-db/* localadmin_$1-1/opt/local-admin/docker/db
+	fi
 
 
         mkdir localadmin_$1-1/usr/bin -p
@@ -26,9 +34,15 @@ if [ $# -eq 1 ]
 
         mkdir -p localadmin_$1-1/DEBIAN
         cp installer-data/INSTALLER.meta localadmin_$1-1/DEBIAN/control
-        cp installer-data/local-admin.service localadmin_$1-1/opt/systemd/system
+        mkdir -p localadmin_$1-1/opt/systemd/system
+	cp installer-data/local-admin.service localadmin_$1-1/opt/systemd/system/local-admin.service
         sed -i "s|{V}|$1|" localadmin_$1-1/DEBIAN/control
-        dpkg-deb --build localadmin_$1-1
+        sudo chmod 755 localadmin_$1-1
+	chmod 755 locacadmin_$1-1
+	dpkg-deb --build localadmin_$1-1
     else
-        echo "You have to add a version !"
+        echo "Wrong syntax create-installer.sh <version> <-e/-c/-d>"
+		echo " -e    Empty Database: Exports no database"
+		echo " -c    Custom: Copys the base-db folder as data"
+		echo " -d    Dump: Copies you local database"
 fi
