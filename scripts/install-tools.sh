@@ -1,6 +1,6 @@
 apt update
 apt upgrade
-apt install git maven npm python
+apt install -y git maven npm python
 npm install redoc-cli -g
 npm install openapi-enforcer -g
 npm install speccy -g
