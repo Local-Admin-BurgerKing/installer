@@ -1,6 +1,8 @@
 # Local Admin
 
-> If you searing for a usage/installation guide, it is found [here](Usage.md)
+ [Installation & Usage](Usage.md)
+
+[Roadmap](roadmap.md)
 
 ## Table of content
 
