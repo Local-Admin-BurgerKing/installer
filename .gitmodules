@@ -1,0 +1,12 @@
+[submodule "licence-server"]
+	path = licence-server
+	url = https://github.com/Local-Admin-BurgerKing/licence-server
+[submodule "converter"]
+	path = converter
+	url = https://github.com/Local-Admin-BurgerKing/converter
+[submodule "core"]
+	url = https://github.com/Local-Admin-BurgerKing/core
+[submodule "rest-api"]
+	url = https://github.com/Local-Admin-BurgerKing/rest-api
+[submodule "service-worker"]
+	url = https://github.com/Local-Admin-BurgerKing/service-worker
