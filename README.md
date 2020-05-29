@@ -4,6 +4,7 @@
 
 - Conclusion
 - What is it
+- Commands
 - Technology
   - core
   - Rest API
@@ -49,6 +50,19 @@
 The function and usage area is described in over 100 Pages so we won't repeat it all
 
 > This 100 page document is called `Lastenheft` and `Machbarkeitsstudie` (which are owned by every owner of the software)
+
+## Commands
+
+> All commands are only testet with debian & Ubuntu. And some of them are using `apt`
+
+| Command                                 | Description                                                  |
+| --------------------------------------- | ------------------------------------------------------------ |
+| ./scripts/start.sh                      | Recompiles the projects and starts the updated docker container |
+| ./scripts/create-installer.sh {version} | Creates an DEB installer with the version tag given, (automaticly builds/compiles project) |
+| ./scripts/export.sh                     | Compiles all sub projects and copys the result to the `export` folder |
+| ./scripts/init.sh                       | Downloads all sub git repos (only execute at the very start) |
+| ./scripts/install-tools.sh              | Downloads/Installs all tools you need for this project like autogenerators |
+| ./scripts/update.sh                     | Updates/Pulls all dependencies                               |
 
 ## Technology
 
