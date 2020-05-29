@@ -18,3 +18,6 @@ localadmin_*-1.deb
 *.jar
 *.class
 target/
+banner.png
+
+banner.pdn

@@ -1,5 +1,7 @@
 # Local Admin
 
+> If you searing for a usage/installation guide, it is found [here](Usage.md)
+
 ## Table of content
 
 - Conclusion
@@ -19,6 +21,7 @@
   - Core
   - Webpage
   - Rest API
+  - Docker
 - Extendability
   - Basics
   - Client/Frontend
@@ -136,7 +139,7 @@ All calculations happen in the DB for performance reasons.
 
 ### Basics
 
-The project is divied into 5 parts:
+The project is divided into 5 parts/layers:
 
 - Core
 - Rest-API
@@ -144,11 +147,24 @@ The project is divied into 5 parts:
 - Service Worker
 - License server
 
-The `core` is the base of all other components as it is reponsible for logic operatios and mainly DB access. All projects except the `license server`  are dependents of the core.
+The `core` is the base of all other components as it is responsible for logic operations and mainly DB access. All projects except the `license server`  are dependents of the core.
 
 Here is a dependency graph:
 
 ![Maven tree](Maven tree.png)
+
+This five parts are kind of modules and each depend on the next layer
+
+![layer](D:\Users\Nils\Desktop\Schule\ITP\local-admin\layer-documentation.png)
+
+The special thing about this is that each component is (should be) completely exchangeable without affecting the layers above as the dependencies use official and specified interfaces such as *HTTP/S*, *SQL* and *Maven*. But to be honest at two points there can occur problems.
+
+> By replacing I mean completely reimplementing everything (for example in a different language) but not altering any functionality / features 
+
+* Rest API <-> Core
+  * This connection is made by maven which results in the API and the core merging to one unit which makes it hard to exchange one of the without adapting the other one. (eg. Rewriting the core in C++ you will have a hard time to use it as lib in the Rest API as long as you don`t reimplement the Api in C++ too)
+* MySQL
+  * While SQL is a standard each DBMS is doing some extra. So it is quite possible that a feature that the core utilized does not exists in a different environment. And you would maybe need to adjust the code in the core because also syntax is not the same on all DBMS's
 
 ### Core
 
@@ -270,6 +286,10 @@ So you see its a lot more easy to find/write code and not beeing distracted by l
 ### Webpage
 
 > The webpage was not build to be sustained in a long term -> No detailed information
+
+### Docker
+
+> **TODO**
 
 ## Extendibility
 
