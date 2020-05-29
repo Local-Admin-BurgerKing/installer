@@ -10,7 +10,7 @@ if (( $# == 2 )) && (( "$2" == "-e" || "$2" == "-c" || "$2" == "-d" ))
 
         cp docker-compose.yml localadmin_$1-1/opt/local-admin/
         cp -r exportet/* localadmin_$1-1/opt/local-admin/exportet/
-	cp -r docker/* localadmin_$1-1/opt/local-admin/docker/
+		cp -r docker/* localadmin_$1-1/opt/local-admin/docker/
 	
 	if [ "$2" = "-e" ]
 		then
@@ -35,7 +35,7 @@ if (( $# == 2 )) && (( "$2" == "-e" || "$2" == "-c" || "$2" == "-d" ))
         mkdir -p localadmin_$1-1/DEBIAN
         cp installer-data/INSTALLER.meta localadmin_$1-1/DEBIAN/control
         mkdir -p localadmin_$1-1/opt/systemd/system
-	cp installer-data/local-admin.service localadmin_$1-1/opt/systemd/system/local-admin.service
+		cp installer-data/local-admin.service localadmin_$1-1/opt/systemd/system/local-admin.service
         sed -i "s|{V}|$1|" localadmin_$1-1/DEBIAN/control
         sudo chmod 755 localadmin_$1-1
 	chmod 755 locacadmin_$1-1

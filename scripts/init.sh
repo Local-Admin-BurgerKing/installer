@@ -1,5 +1,5 @@
 echo "Download Niton Media Framework"
-git clone https://github.com/nbrugger-tgm/Niton-Media-Framework.git media-framework --progress
+git clone https://github.com/nbrugger-tgm/data-man.git media-framework --progress
 echo "Install ..."
 cd media-framework
 mvn clean install
