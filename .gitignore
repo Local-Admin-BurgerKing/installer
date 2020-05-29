@@ -14,3 +14,7 @@ localadmin_*-1/*
 base-db/
 
 localadmin_*-1.deb
+
+*.jar
+*.class
+target/
