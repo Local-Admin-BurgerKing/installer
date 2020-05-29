@@ -21,11 +21,10 @@
   - Rest API
 - Extendability
   - Basics
-  - Backend
-    - Rest API
-    - New functions
-    - Datastructure
-  - Frontend
+  - Client/Frontend
+  - API
+  - Core/Backend
+  - Database
 
 ## Conclusion
 
@@ -43,7 +42,7 @@
 + Everything is a model! Do never declare something(response body etc.) as more than a ref. It will mess up all your codegen
 + Also define 'native' (`int`,`string`,`boorlen`,etc) as models when they have restrictions (min/max/enum)
 + Use `allOf`! Sometimes you will forget how usefull it is; use it (it does not mee up your code but it will not lead to intherence [`extends`])
-+ Decide between overengeneering (like we did) or only providing things the user needs and also in a way they need
++ Decide between overengeneering (like we did) or only providing things the user needs and also in a way they need it
 
 ## What is it
 
@@ -59,7 +58,7 @@ The function and usage area is described in over 100 Pages so we won't repeat it
 | --------------------------------------- | ------------------------------------------------------------ |
 | ./scripts/start.sh                      | Recompiles the projects and starts the updated docker container |
 | ./scripts/create-installer.sh {version} | Creates an DEB installer with the version tag given, (automaticly builds/compiles project) |
-| ./scripts/export.sh                     | Compiles all sub projects and copys the result to the `export` folder |
+| ./scripts/export.sh                     | Compiles all sub projects and copies the result to the `export` folder |
 | ./scripts/init.sh                       | Downloads all sub git repos (only execute at the very start) |
 | ./scripts/install-tools.sh              | Downloads/Installs all tools you need for this project like autogenerators |
 | ./scripts/update.sh                     | Updates/Pulls all dependencies                               |
@@ -105,14 +104,14 @@ The function and usage area is described in over 100 Pages so we won't repeat it
 
 > Written in the perspective of the customer who bought the software
 
-I like to store all my `restaurants`, they have: `name`, an informal `location`, a unique `number` and a `status` - displaing if the restaurant is opened or not. Each restaurant also has employees which are responsible for this restaurant. A employee could also work for more restaurants. A employee should be a person which is in the system. So i like to have a user system where each user has a name and an email-adress. Each user only has certain permissions. These are defined by his permission Group (eg. Manager, Restaurant Manager). Each of this group should have multiple permissions. The list of all permissions is down there. A restaurant also has a dashboard where all issues the restaurant has are posted. Such a issue has a text arround 2000 chars max. It also should have a title, priority from 1-5 and also a flag if it is allready done. We also need a list storing email addresses, new issues should be mailed to. These mail adresses do not need to be users in the system. For each restaurant there exist multiple daily reports (one per day max),
-each of this reports contains a pair list of daily-columns and their value (in cent) at this date. Talking of columns. There exist 3 Types of collumns. The thing they all have in common is a name and a description where the name is identifying. The 3 collumn types are daily-columns, formulas and salary-levels. a formula is composed of 2 columns(every type) as well as a mathematical operator which should apply to them. It also should be possible to attatch additional columns to a formular, like a chain (c1+c2+c3+c4 -> c3+c4 are *other* columns). Where salary levels store changes for each restaurant. This changes are bound to a specific date and there can only be one per restaurant and day. The change stores a value in cent. I would also like to store filters which contain the names of the columns they will show. The last thing is that i would like to store my email settings which consist of 2 filters a subject and a text
+I like to store all my `restaurants`, they have: `name`, an informal `location`, a unique `number` and a `status` - displaying if the restaurant is opened or not. Each restaurant also has employees which are responsible for this restaurant. A employee could also work for more restaurants. A employee should be a person which is in the system. So i like to have a user system where each user has a name and an email-address. Each user only has certain permissions. These are defined by his permission Group (eg. Manager, Restaurant Manager). Each of this group should have multiple permissions. The list of all permissions is down there. A restaurant also has a dashboard where all issues the restaurant has are posted. Such a issue has a text around 2000 chars max. It also should have a title, priority from 1-5 and also a flag if it is already done. We also need a list storing email addresses, new issues should be mailed to. These mail addresses do not need to be users in the system. For each restaurant there exist multiple daily reports (one per day max),
+each of this reports contains a pair list of daily-columns and their value (in cent) at this date. Talking of columns. There exist 3 Types of columns. The thing they all have in common is a name and a description where the name is identifying. The 3 column types are daily-columns, formulas and salary-levels. a formula is composed of 2 columns(every type) as well as a mathematical operator which should apply to them. It also should be possible to attach additional columns to a formula, like a chain (c1+c2+c3+c4 -> c3+c4 are *other* columns). Where salary levels store changes for each restaurant. This changes are bound to a specific date and there can only be one per restaurant and day. The change stores a value in cent. I would also like to store filters which contain the names of the columns they will show. The last thing is that i would like to store my email settings which consist of 2 filters a subject and a text
 
 ### Diagram
 
 > Some tables are documented using comments
 
-![image-20191219181418111](core/DB/ERD.png)
+![image-20191219181418111](https://github.com/Local-Admin-BurgerKing/core/raw/master/DB/ERD.png)
 
 ### Procedures
 
@@ -149,11 +148,11 @@ The `core` is the base of all other components as it is reponsible for logic ope
 
 Here is a dependency graph:
 
-![Maven tree](/home/nils/Schule/ITP/local-admin/Maven tree.png)
+![Maven tree](Maven tree.png)
 
 ### Core
 
-The core contans all Database operations.
+The core contains all Database operations.
 
 ##### Some infos
 
@@ -268,5 +267,64 @@ So you see its a lot more easy to find/write code and not beeing distracted by l
 
 > This works as `@Annotations` which controll Spring are overtaken by overwriting methods
 
-- Webpage
-- Rest API
+### Webpage
+
+> The webpage was not build to be sustained in a long term -> No detailed information
+
+## Extendibility
+
+All components were designed to be easy to extend as far as it is possible.
+Closer explanation about *how* to extend the components are written down on the corresponding repository
+
+There are several layers of extendibility:
+
+* **Clients**
+  * Very easy
+  * Limited to the usage of the API
+  * Every Programming Language
+  * Possibilities
+    * Creating Websites or Apps
+    * Creating desktop Applications
+    * Integrate in existing Projects
+* **API**
+  * Relatively easy
+  * Needs to be done in Java
+  * Nearly no Algorithmic(Calculations etc.) needed
+  * Limited to the functionality in the core
+  * Possibilities
+    * Create endpoints for new functionalities in the core
+    * Make access to certain data more easy
+    * Make more data accessible
+    * Reinforce HTTPS/Certificate/Security
+    * Implement HTTP level restrictions
+* **Core**
+  * Relatively Complex
+  * Design Patterns (architecture) and logic needed
+  * Limited to Features of the Database
+  * Possibilities:
+    *  **Adding complete new features**
+      * They would still need to be implemented in the API
+      * You can only add features at this level which do not need changes in the database
+    * Reinforcing old algorithms/logic
+    * Alter existing logic
+    * Completely rewrite (nearly) anything
+    * Change the PDF generation (style/logic/add new)
+    * 90% of bugfixes need to be done here
+* **Database**
+  * Complex
+  * Much algorithmic/logic/architecture (skills) needed
+  * Limited to SQL and especially MySQL
+  * Possibilities
+    * Adding the Base of all new features
+    * Adding additional data
+    * All types of calculation should be done at this layer  to ensure further extendibility
+
+Adding or changing stuff in a layer does indeed needs all layers above to adapt to this change.
+For example: You would like to add the feature close a restaurant for a certain time. As the Database has no table for such a change, you would need the following steps
+
+1. Adding the tables/procedures/views to the database
+2. Re-autogenerate the code to the `core`
+3. Implement logic and database accesses in `core`
+4. Implement endpoints in the `rest-api` to access the new data
+5. (optional) Add the interface in the `client`/frontend which enables the user to finally use the feature
+
