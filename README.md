@@ -1,8 +1,8 @@
 # Local Admin
 
- [Installation & Usage](Usage.md)
+ [Installation & Usage](documentation/Usage.md)
 
-[Roadmap](roadmap.md)
+[Roadmap](documentation/roadmap.md)
 
 ## Table of content
 
@@ -153,11 +153,11 @@ The `core` is the base of all other components as it is responsible for logic op
 
 Here is a dependency graph:
 
-![Maven tree](Maven tree.png)
+![Maven tree](documentation/mvn-tree.png)
 
 This five parts are kind of modules and each depend on the next layer
 
-![layer](D:\Users\Nils\Desktop\Schule\ITP\local-admin\layer-documentation.png)
+![layer](documentation/layer-documentation.png)
 
 The special thing about this is that each component is (should be) completely exchangeable without affecting the layers above as the dependencies use official and specified interfaces such as *HTTP/S*, *SQL* and *Maven*. But to be honest at two points there can occur problems.
 
