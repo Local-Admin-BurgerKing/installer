@@ -1,10 +1,6 @@
 rm bin -r
 mkdir bin
 
-cd media-framework
-mvn install
-cd ..
-
 cd autowire
 mvn install
 cd ..
