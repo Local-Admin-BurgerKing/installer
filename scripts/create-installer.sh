@@ -6,10 +6,11 @@ if (( $# == 2 )) && (( "$2" == "-e" || "$2" == "-c" || "$2" == "-d" ))
         rm localadmin_$1-1.deb
         mkdir localadmin_$1-1
         mkdir -p localadmin_$1-1/opt/local-admin/docker
-        mkdir -p localadmin_$1-1/opt/local-admin/exportet
-
+        mkdir -p localadmin_$1-1/opt/local-admin/bin
+        
+        cp local-admin.cfg localadmin_$1-1/opt/local-admin/local-admin.cfg
         cp docker-compose.yml localadmin_$1-1/opt/local-admin/
-        cp -r exportet/* localadmin_$1-1/opt/local-admin/exportet/
+        cp -r bin/* localadmin_$1-1/opt/local-admin/bin/
 		cp -r docker/* localadmin_$1-1/opt/local-admin/docker/
 	
 	if [ "$2" = "-e" ]

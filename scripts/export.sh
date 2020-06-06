@@ -1,5 +1,5 @@
-rm exportet -r
-mkdir exportet
+rm bin -r
+mkdir bin
 
 cd media-framework
 mvn install
@@ -16,15 +16,15 @@ cd ..
 
 cd rest-api
 mvn clean package
-cp target/*.war ../exportet/rest-api-war.jar
+cp target/*.war ../bin/rest-api-war.jar
 cd ..
 
 cd webpage
 mvn clean package
-cp target/*.war ../exportet/ROOT.war
+cp target/*.war ../bin/ROOT.war
 cd ..
 
 cd service-worker
 mvn clean  package -P "Jar With Dependencies"
-cp target/*-dependencies.jar ../exportet/sw.jar
+cp target/*-dependencies.jar ../bin/sw.jar
 cd ..
