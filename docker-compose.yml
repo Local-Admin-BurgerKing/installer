@@ -16,7 +16,9 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - './exportet:/app'
+      - './bin:/app'
+      - './local-admin.cfg:/app/config.cfg'
+      - './logs:/app/logs'
     command: java -jar /app/rest-api-war.jar
     depends_on:
       - db
@@ -25,15 +27,19 @@ services:
     ports:
       - '80:8080'
     volumes:
-      - './exportet:/usr/local/tomcat/webapps'
+      - './bin:/usr/local/tomcat/webapps'
+      - './local-admin.cfg:/app/config.cfg'
+      - './logs:/app/logs'
     depends_on:
       - db
   service-worker:
     image: 'openjdk:11'
     volumes:
-      - './exportet:/app'
+      - './bin:/app'
       - './docker/db-backup:/to'
       - './docker/db:/from'
+      - './local-admin.cfg:/app/config.cfg'
+      - './logs:/app/logs'
     command: java -jar /app/sw.jar
     depends_on:
       - db
@@ -42,5 +48,5 @@ services:
     volumes:
       - './:/project'
     environment:
-      - version=1.2
+      - version=1.2.1
     command: /project/scripts/docker-deb-installer.sh
