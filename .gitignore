@@ -6,7 +6,7 @@ exportet/
 clients/
 
 docker/
-
+!docker/mysql.cnf
 android-app/
 
 localadmin_*-1/*
