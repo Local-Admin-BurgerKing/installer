@@ -12,7 +12,7 @@
 	url = https://github.com/Local-Admin-BurgerKing/rest-api
 [submodule "service-worker"]
 	path = service-worker
-	url = https://github.com/Local-Admin-BurgerKing/service-worker
+	url = https://github.com/Local-Admin-BurgerKing/ServiceWorker
 [submodule "autowire"]
 	path = autowire
 	url = https://github.com/nbrugger-tgm/ObjectMapper
