@@ -1,0 +1,8 @@
+[mysqld]
+default-storage-engine = INNODB
+max_sp_recursion_depth = 1000
+thread_stack = 256K
+max_allowed_packet = 16M
+general_log_file = /custommysql.log
+general_log      = 0
+  

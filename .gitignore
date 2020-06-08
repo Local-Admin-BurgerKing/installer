@@ -5,7 +5,7 @@ exportet/
 
 clients/
 
-docker/
+docker/**
 !docker/mysql.cnf
 android-app/
 
