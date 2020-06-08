@@ -1,7 +1,15 @@
 rm bin -r
 mkdir bin
 
-cd autowire
+cd object-mapper
+mvn install
+cd ..
+
+cd data-man
+mvn install
+cd ..
+
+cd login-secure
 mvn install
 cd ..
 

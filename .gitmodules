@@ -1,21 +1,27 @@
-[submodule "licence-server"]
-	path = licence-server
-	url = https://github.com/Local-Admin-BurgerKing/licence-server
-[submodule "converter"]
-	path = converter
-	url = https://github.com/Local-Admin-BurgerKing/converter
 [submodule "core"]
 	path = core
 	url = https://github.com/Local-Admin-BurgerKing/core
-[submodule "rest-api"]
-	path = rest-api
-	url = https://github.com/Local-Admin-BurgerKing/rest-api
-[submodule "service-worker"]
-	path = service-worker
-	url = https://github.com/Local-Admin-BurgerKing/ServiceWorker
-[submodule "autowire"]
-	path = autowire
-	url = https://github.com/nbrugger-tgm/ObjectMapper
 [submodule "webpage"]
 	path = webpage
 	url = https://github.com/Local-Admin-BurgerKing/main-server
+[submodule "service-worker"]
+	path = service-worker
+	url = https://github.com/Local-Admin-BurgerKing/ServiceWorker
+[submodule "rest-api"]
+	path = rest-api
+	url = https://github.com/Local-Admin-BurgerKing/rest-api
+[submodule "converter"]
+	path = converter
+	url = https://github.com/Local-Admin-BurgerKing/Converter
+[submodule "licence-server"]
+	path = licence-server
+	url = https://github.com/Local-Admin-BurgerKing/licence-server
+[submodule "data-man"]
+	path = data-man
+	url = https://github.com/nbrugger-tgm/data-man
+[submodule "login-secure"]
+	path = login-secure
+	url = https://github.com/nbrugger-tgm/Login-Security
+[submodule "object-mapper"]
+	path = object-mapper
+	url = https://github.com/nbrugger-tgm/ObjectMapper
