@@ -10,3 +10,5 @@
 	url = https://github.com/Local-Admin-BurgerKing/rest-api
 [submodule "service-worker"]
 	url = https://github.com/Local-Admin-BurgerKing/service-worker
+[submodule "autowire"]
+	url = https://github.com/nbrugger-tgm/ObjectMapper
