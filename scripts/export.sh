@@ -5,11 +5,13 @@ cd data-man
 mvn install
 cd ..
 
-cd object-mapper
+cd json-io
 mvn install
 cd ..
 
-
+cd object-mapper
+mvn install
+cd ..
 
 cd login-secure
 mvn install
