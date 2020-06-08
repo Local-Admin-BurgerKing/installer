@@ -5,10 +5,17 @@
 	path = converter
 	url = https://github.com/Local-Admin-BurgerKing/converter
 [submodule "core"]
+	path = core
 	url = https://github.com/Local-Admin-BurgerKing/core
 [submodule "rest-api"]
+	path = rest-api
 	url = https://github.com/Local-Admin-BurgerKing/rest-api
 [submodule "service-worker"]
+	path = service-worker
 	url = https://github.com/Local-Admin-BurgerKing/service-worker
 [submodule "autowire"]
+	path = autowire
 	url = https://github.com/nbrugger-tgm/ObjectMapper
+[submodule "webpage"]
+	path = webpage
+	url = https://github.com/Local-Admin-BurgerKing/main-server
