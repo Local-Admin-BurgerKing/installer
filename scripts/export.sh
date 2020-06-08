@@ -1,13 +1,15 @@
 rm bin -r
 mkdir bin
 
+cd data-man
+mvn install
+cd ..
+
 cd object-mapper
 mvn install
 cd ..
 
-cd data-man
-mvn install
-cd ..
+
 
 cd login-secure
 mvn install
