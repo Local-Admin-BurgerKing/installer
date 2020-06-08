@@ -25,3 +25,6 @@
 [submodule "object-mapper"]
 	path = object-mapper
 	url = https://github.com/nbrugger-tgm/ObjectMapper
+[submodule "json-io"]
+	path = json-io
+	url = https://github.com/nbrugger-tgm/JsonIO
