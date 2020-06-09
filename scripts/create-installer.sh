@@ -39,7 +39,7 @@ if (( $# == 2 )) && (( "$2" == "-e" || "$2" == "-c" || "$2" == "-d" ))
 		cp installer-data/local-admin.service localadmin_$1-1/opt/systemd/system/local-admin.service
         sed -i "s|{V}|$1|" localadmin_$1-1/DEBIAN/control
         sudo chmod 755 localadmin_$1-1
-	chmod 755 locacadmin_$1-1
+	chmod 775 locacadmin_$1-1
 	dpkg-deb --build localadmin_$1-1
     else
         echo "Wrong syntax create-installer.sh <version> <-e/-c/-d>"
