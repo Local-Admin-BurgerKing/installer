@@ -23,3 +23,5 @@ banner.png
 banner.pdn
 
 bin/
+
+*.cfg
