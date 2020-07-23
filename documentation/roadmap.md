@@ -11,9 +11,9 @@
     - [ ] API
     - [ ] Frontend
 - [ ] Bugfixes Serviceworker (Emails)
-- [ ] Hight Security Login System
+- [x] Hight Security Login System
     - [x] Architecture
-    - [ ] Implementation
+    - [x] Implementation
 - [ ] Bugfixing Report PDF generation
 - [ ] Implement Database logging
     - [x] Database
