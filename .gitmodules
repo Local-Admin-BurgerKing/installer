@@ -28,3 +28,6 @@
 [submodule "json-io"]
 	path = json-io
 	url = https://github.com/nbrugger-tgm/JsonIO
+[submodule "password-utility"]
+	path = password-utility
+	url = https://github.com/Local-Admin-BurgerKing/password-utility
