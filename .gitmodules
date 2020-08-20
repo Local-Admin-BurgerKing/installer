@@ -16,9 +16,6 @@
 [submodule "licence-server"]
 	path = licence-server
 	url = https://github.com/Local-Admin-BurgerKing/licence-server
-[submodule "data-man"]
-	path = data-man
-	url = https://github.com/nbrugger-tgm/data-man
 [submodule "login-secure"]
 	path = login-secure
 	url = https://github.com/nbrugger-tgm/Login-Security
