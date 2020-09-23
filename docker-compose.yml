@@ -3,11 +3,11 @@ services:
   db:
     image: 'mysql:8.0'
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - max_sp_recursion_depth=12
+      - MYSQL_ROOT_PASSWORD=DHO4A56W798347IUdg478n6i8342Aw567u8dza678WIN86
     volumes:
       - './docker/db:/var/lib/mysql'
-      - '/mysql.cnf:/etc/my.cnf'
+      - './docker/mysql.cnf:/etc/my.cnf'
       - './docker/mysql.log:/custommysql.log'
     ports:
       - '100:3306'
@@ -16,10 +16,10 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - './bin:/app'
+      - './bin/rest-api-war.jar:/app/bin.jar'
       - './local-admin.cfg:/app/config.cfg'
       - './logs:/app/logs'
-    command: java -jar /app/rest-api-war.jar
+    command: java -jar /app/bin.jar
     depends_on:
       - db
   webpage:
@@ -27,20 +27,18 @@ services:
     ports:
       - '80:8080'
     volumes:
-      - './bin:/usr/local/tomcat/webapps'
+      - './bin/ROOT.war:/usr/local/tomcat/webapps/ROOT.war'
       - './local-admin.cfg:/app/config.cfg'
       - './logs:/app/logs'
-    depends_on:
-      - db
   service-worker:
     image: 'openjdk:11'
     volumes:
-      - './bin:/app'
+      - './bin/sw.jar:/app/bin.jar'
       - './docker/db-backup:/to'
       - './docker/db:/from'
       - './local-admin.cfg:/app/config.cfg'
       - './logs:/app/logs'
-    command: java -jar /app/sw.jar
+    command: java -jar /app/bin.jar
     depends_on:
       - db
   installer:
