@@ -3,7 +3,7 @@ services:
   db:
     image: 'mysql:8.0'
     environment:
-      - max_sp_recursion_depth=12
+      - max_sp_recursion_depth=255
       - MYSQL_ROOT_PASSWORD=DHO4A56W798347IUdg478n6i8342Aw567u8dza678WIN86
     volumes:
       - './docker/db:/var/lib/mysql'

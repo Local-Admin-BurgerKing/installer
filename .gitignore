@@ -12,6 +12,7 @@ android-app/
 localadmin_*-1/*
 
 base-db/
+logs/
 
 localadmin_*-1.deb
 
@@ -25,3 +26,4 @@ banner.pdn
 bin/
 
 *.cfg
+!local-admin.cfg
