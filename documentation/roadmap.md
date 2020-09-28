@@ -4,7 +4,7 @@
 
 - [ ] Implement Reporting System
     - [ ] Errors
-    - [ ] Security
+    - [x] Security
 - [ ] Implementing Ticket-system (maintenance)
     - [x] Database
     - [ ] Core
@@ -25,6 +25,10 @@
     - [ ] Core
     - [ ] API
     - [ ] Frontend
+- [ ] Implement soft deletion (restaurants and columns)
+    - [x] Database
+    - [ ] Core
+    - [ ] API
 - [ ] Multi language support (DE, EN)
 - [x] Server configuration files
 - [ ] Improved Linux Services *systemd*
