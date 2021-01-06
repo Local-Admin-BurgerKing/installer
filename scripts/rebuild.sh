@@ -1,14 +1,6 @@
 rm bin -r
 mkdir bin
 
-cd json-io
-mvn install
-cd ..
-
-cd object-mapper
-mvn install
-cd ..
-
 cd login-secure
 mvn install
 cd ..
@@ -16,7 +8,6 @@ cd ..
 cd core
 mvn clean install
 cd ..
-
 
 cd rest-api
 mvn clean package

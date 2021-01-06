@@ -27,11 +27,11 @@ if (( $# == 2 )) && (( "$2" == "-e" || "$2" == "-c" || "$2" == "-d" ))
         mkdir localadmin_$1-1/usr/bin -p
         cp installer-data/run.sh localadmin_$1-1/usr/bin/start-local-admin
         cp installer-data/stop.sh localadmin_$1-1/usr/bin/stop-local-admin
-
+		chmod 777 locacadmin_$1-1/usr/bin/*
         mkdir localadmin_$1-1/etc/init.d/ -p
         cp installer-data/run.sh localadmin_$1-1/etc/init.d/localadmin
 
-        sed -i 's|/mysql.cnf|./docker/mysql.cnf|' localadmin_$1-1/opt/local-admin/docker-compose.yml
+        #sed -i 's|/mysql.cnf|/docker/mysql.cnf|' localadmin_$1-1/opt/local-admin/docker-compose.yml
 
         mkdir -p localadmin_$1-1/DEBIAN
         cp installer-data/INSTALLER.meta localadmin_$1-1/DEBIAN/control
@@ -39,7 +39,7 @@ if (( $# == 2 )) && (( "$2" == "-e" || "$2" == "-c" || "$2" == "-d" ))
 		cp installer-data/local-admin.service localadmin_$1-1/opt/systemd/system/local-admin.service
         sed -i "s|{V}|$1|" localadmin_$1-1/DEBIAN/control
         sudo chmod 755 localadmin_$1-1
-	chmod 755 locacadmin_$1-1
+	chmod 775 locacadmin_$1-1
 	dpkg-deb --build localadmin_$1-1
     else
         echo "Wrong syntax create-installer.sh <version> <-e/-c/-d>"

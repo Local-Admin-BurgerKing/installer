@@ -5,13 +5,14 @@ exportet/
 
 clients/
 
-docker/
-
+docker/**
+!docker/mysql.cnf
 android-app/
 
 localadmin_*-1/*
 
 base-db/
+logs/
 
 localadmin_*-1.deb
 
@@ -23,3 +24,6 @@ banner.png
 banner.pdn
 
 bin/
+
+*.cfg
+!local-admin.cfg
