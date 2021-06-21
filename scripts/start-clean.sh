@@ -1,5 +1,6 @@
+cd runtimes/test
 docker-compose down
-rm -r logs docker/db bin
+rm -r logs data bin
 echo Build Project
 ./scripts/export.sh
 echo Restart

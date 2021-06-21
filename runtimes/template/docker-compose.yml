@@ -1,0 +1,47 @@
+version: '3'
+services:
+  db:
+    image: 'mysql:8.0'
+    environment:
+      - MYSQL_ROOT_PASSWORD=DHO4A56W798347IUdg478n6i8342Aw567u8dza678WIN86
+    volumes:
+      - './data:/var/lib/mysql'
+      - './mysql.cfg:/etc/my.cnf'
+      - './mysql.log:/custommysql.log'
+  rest-api:
+    image: 'openjdk:11'
+    ports:
+      - '8080:8080'
+    volumes:
+      - './bin/rest-api-war.jar:/app/bin.jar'
+      - './local-admin.cfg:/app/config.cfg'
+      - './logs:/app/logs'
+    command: java -jar /app/bin.jar
+    depends_on:
+      - db
+  webpage:
+    image: 'tomcat:jdk11-openjdk'
+    ports:
+      - '80:8080'
+    volumes:
+      - './bin/webapp.war:/usr/local/tomcat/webapps/ROOT.war'
+      - './local-admin.cfg:/app/config.cfg'
+      - './logs:/app/logs'
+  service-worker:
+    image: 'openjdk:11'
+    volumes:
+      - './bin/sw.jar:/app/bin.jar'
+      - './backup:/to'
+      - './data:/from'
+      - './local-admin.cfg:/app/config.cfg'
+      - './logs:/app/logs'
+    command: java -jar /app/bin.jar
+    depends_on:
+      - db
+  installer:
+    image: 'debian:buster'
+    volumes:
+      - './:/project'
+    environment:
+      - version=1.4.0
+    command: /project/scripts/docker-deb-installer.sh

@@ -3,12 +3,11 @@ services:
   db:
     image: 'mysql:8.0'
     environment:
-      - max_sp_recursion_depth=255
-      - MYSQL_ROOT_PASSWORD=DHO4A56W798347IUdg478n6i8342Aw567u8dza678WIN86
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     volumes:
-      - './docker/db:/var/lib/mysql'
-      - './docker/mysql.cnf:/etc/my.cnf'
-      - './docker/mysql.log:/custommysql.log'
+      - './data:/var/lib/mysql'
+      - './mysql.cfg:/etc/my.cnf'
+      - './mysql.log:/custommysql.log'
     ports:
       - '100:3306'
   rest-api:
@@ -27,15 +26,15 @@ services:
     ports:
       - '80:8080'
     volumes:
-      - './bin/ROOT.war:/usr/local/tomcat/webapps/ROOT.war'
+      - './bin/webapp.war:/usr/local/tomcat/webapps/ROOT.war'
       - './local-admin.cfg:/app/config.cfg'
       - './logs:/app/logs'
   service-worker:
     image: 'openjdk:11'
     volumes:
       - './bin/sw.jar:/app/bin.jar'
-      - './docker/db-backup:/to'
-      - './docker/db:/from'
+      - './backup:/to'
+      - './data:/from'
       - './local-admin.cfg:/app/config.cfg'
       - './logs:/app/logs'
     command: java -jar /app/bin.jar
@@ -46,5 +45,5 @@ services:
     volumes:
       - './:/project'
     environment:
-      - version=1.2.1
+      - version=1.4.0
     command: /project/scripts/docker-deb-installer.sh

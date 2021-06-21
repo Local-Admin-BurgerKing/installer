@@ -1,5 +1,6 @@
 apt update
 apt upgrade
+apt install python3 npm maven
 apt install -y git maven npm python
 npm install redoc-cli -g
 npm install openapi-enforcer -g

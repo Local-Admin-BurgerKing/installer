@@ -1,30 +1,30 @@
 [submodule "core"]
-	path = core
+	path = modules/core
 	url = https://github.com/Local-Admin-BurgerKing/core
 [submodule "webpage"]
-	path = webpage
+	path = modules/webpage
 	url = https://github.com/Local-Admin-BurgerKing/main-server
 [submodule "service-worker"]
-	path = service-worker
+	path = modules/service-worker
 	url = https://github.com/Local-Admin-BurgerKing/ServiceWorker
 [submodule "rest-api"]
-	path = rest-api
+	path = modules/rest-api
 	url = https://github.com/Local-Admin-BurgerKing/rest-api
 [submodule "converter"]
-	path = converter
+	path = utilies/converter
 	url = https://github.com/Local-Admin-BurgerKing/Converter
 [submodule "licence-server"]
-	path = licence-server
+	path = modules/licence-server
 	url = https://github.com/Local-Admin-BurgerKing/licence-server
 [submodule "login-secure"]
-	path = login-secure
+	path = dependencies/login-secure
 	url = https://github.com/nbrugger-tgm/Login-Security
 [submodule "object-mapper"]
-	path = object-mapper
+	path = dependencies/object-mapper
 	url = https://github.com/nbrugger-tgm/ObjectMapper
 [submodule "json-io"]
-	path = json-io
+	path = dependencies/json-io
 	url = https://github.com/nbrugger-tgm/JsonIO
 [submodule "password-utility"]
-	path = password-utility
+	path = utilies/password-utility
 	url = https://github.com/Local-Admin-BurgerKing/password-utility
