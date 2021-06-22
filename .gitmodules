@@ -11,7 +11,7 @@
 	path = modules/rest-api
 	url = https://github.com/Local-Admin-BurgerKing/rest-api
 [submodule "converter"]
-	path = utilies/converter
+	path = utilities/converter
 	url = https://github.com/Local-Admin-BurgerKing/Converter
 [submodule "licence-server"]
 	path = modules/licence-server
@@ -26,5 +26,6 @@
 	path = dependencies/json-io
 	url = https://github.com/nbrugger-tgm/JsonIO
 [submodule "password-utility"]
-	path = utilies/password-utility
+	path = utilities/password-utility
 	url = https://github.com/Local-Admin-BurgerKing/password-utility
+
