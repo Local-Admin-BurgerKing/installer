@@ -2,6 +2,7 @@
 
 ## Roadmap
 
+- [ ] ZIP compress backups
 - [ ] Implement Reporting System
     - [ ] Errors
     - [x] Security
@@ -27,9 +28,8 @@
     - [ ] Frontend
 - [ ] Implement soft deletion (restaurants and columns)
     - [x] Database
-    - [ ] Core
+    - [ ] Core (WIP)
     - [ ] API
-- [ ] Multi language support (DE, EN)
 - [x] Server configuration files
 - [ ] Improved Linux Services *systemd*
 - [ ] (optional) Result Caching -> Performance (calculate_table)
