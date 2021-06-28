@@ -7,10 +7,6 @@ do
 done
 
 cd dependencies
-cd json-io
-pwd
-mvn install
-cd ..
 
 cd object-mapper
 mvn install
