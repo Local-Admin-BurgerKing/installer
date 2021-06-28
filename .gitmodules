@@ -22,10 +22,6 @@
 [submodule "object-mapper"]
 	path = dependencies/object-mapper
 	url = https://github.com/nbrugger-tgm/ObjectMapper
-[submodule "json-io"]
-	path = dependencies/json-io
-	url = https://github.com/nbrugger-tgm/JsonIO
 [submodule "password-utility"]
 	path = utilities/password-utility
 	url = https://github.com/Local-Admin-BurgerKing/password-utility
-
